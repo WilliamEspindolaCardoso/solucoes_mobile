@@ -3,6 +3,8 @@ package com.example.cacatesouro
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.compose.runtime.Composable
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
@@ -17,7 +19,7 @@ class MainActivity : ComponentActivity() {
 
                 NavHost(navController = navController, startDestination = "Home") {
                     composable("Home") {
-                        HomeComposable {
+                        Home {
                             navController.navigate("Pergunta")
                         }
                     }
@@ -25,24 +27,24 @@ class MainActivity : ComponentActivity() {
                     composable("Pergunta") {
                         PerguntaComposable(
                             onBack = { navController.navigate("Home") },
-                            onNext = { navController.navigate("PrimeiraDica") }
+                            onNext = { navController.navigate("Pista1") }
                         )
                     }
-                    composable("PrimeiraDica") {
-                        PrimeiraDicaComposable(
+                    composable("Pista1") {
+                        Pista1(
                             onBack = { navController.navigate("Pergunta") },
-                            onNext = { navController.navigate("SegundaDica") }
+                            onNext = { navController.navigate("Pista2") }
                         )
                     }
-                    composable("SegundaDica") {
-                        SegundaDicaComposable(
-                            onBack = { navController.navigate("PrimeiraDica") },
-                            onNext = { navController.navigate("TerceiraDica") }
+                    composable("Pista2") {
+                        Pista2(
+                            onBack = { navController.navigate("Pista1") },
+                            onNext = { navController.navigate("Pista3") }
                         )
                     }
-                    composable("TerceiraDica") {
-                        TerceiraDicaComposable(
-                            onBack = { navController.navigate("SegundaDica") },
+                    composable("Pista3") {
+                        Pista3(
+                            onBack = { navController.navigate("Pista2") },
                             onNext = { navController.navigate("Tesouro") }
                         )
                     }
@@ -54,5 +56,16 @@ class MainActivity : ComponentActivity() {
                 }
             }
         }
+    }
+}
+
+@Preview(showBackground = true)
+@Composable
+fun HomeComposable() {
+    CacaTesouroTheme {
+        PerguntaComposable(
+            onBack = {},
+            onNext = {}
+        )
     }
 }

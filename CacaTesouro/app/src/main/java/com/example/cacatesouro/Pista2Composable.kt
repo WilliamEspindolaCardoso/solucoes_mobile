@@ -9,21 +9,21 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 
-class PerguntaComposable(onBack: () -> Unit, onNext: () -> Unit) {
+class Pista2Composable(onBack: () -> Unit, onNext: () -> Unit) {
 
     @Composable
-    fun Pergunta(navigateHome: Unit, navigateFirstHint: Unit){
+    fun SegundaPista(navigateFirstHint: Unit, navigateThirdHint: Unit){
         Column (
             modifier = Modifier.fillMaxSize(),
             verticalArrangement = Arrangement.Center,
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
-            Text("Qual o nome da secreto?")
+            Text("Segunda Pista")
             Button(onClick = {}) {
                 Text("Voltar")
             }
             Button(onClick = {}) {
-                Text("Primeira Pista")
+                Text("Próxima Pista")
             }
         }
     }

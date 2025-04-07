@@ -8,18 +8,20 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.unit.sp
 
 @Composable
-fun TesouroComposable(onNavigateHome: () -> Unit) {
-    Column(
+fun Home(onStart: () -> Unit) {
+    Column (
         modifier = Modifier.fillMaxSize(),
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        Text("Parabéns! Você ganhou o tesouro!")
-        Button(onClick = { onNavigateHome() }) {
-            Text("Voltar para a Home")
+        Button(onClick = { onStart() }) {
+            Text("Iniciar Caça ao Tesouro",
+                fontSize = 22.sp,
+                fontWeight = FontWeight.Bold)
         }
     }
 }
-

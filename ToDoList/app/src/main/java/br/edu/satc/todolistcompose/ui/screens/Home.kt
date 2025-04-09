@@ -130,7 +130,7 @@ fun HomeContent(innerPadding: PaddingValues) {
 
     val tasks = mutableListOf<TaskData>()
     for (i in 0..5) {
-        tasks.add(TaskData("Tarefa " + i, "Descricao " + i))
+        tasks.add(TaskData(title = "Tarefa $i", description = "Descricao $i", complete = i % 2 == 0))
     }
 
     /**

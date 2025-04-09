@@ -19,5 +19,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "ToDoListCompose"
+rootProject.name = "Permission"
 include(":app")
